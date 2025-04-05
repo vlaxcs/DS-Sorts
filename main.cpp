@@ -3,6 +3,7 @@
 #include <chrono> // Test
 #include <filesystem> // Test
 #include <fstream> // Test
+#include <bits/ranges_algo.h>
 
 class Algorithm {
 protected:
@@ -191,6 +192,143 @@ public:
     }
 };
 
+class node {
+public:
+    int value;
+    int height;
+    node *left;
+    node *right;
+};
+
+class AVLSort : public Algorithm {
+private:
+
+    node *createNode(int _value) {
+        node *Node = new node();
+        Node->value = _value;
+        Node->left = nullptr;
+        Node->right = nullptr;
+        Node->height = 1;
+
+        return (Node);
+    }
+
+    int getHeight(node *Node) {
+        if (Node == nullptr) {
+            return 0;
+        }
+        return Node->height;
+    }
+
+    int getBalance(node *Node) {
+        if (Node == nullptr) {
+            return 0;
+        }
+
+        return  getHeight(Node->right) - getHeight(Node->left);
+    }
+
+    node *rotRight(node *Node) {
+        //std::cout << "rotRight on " << Node->value << std::endl;
+        node *parent = Node->left;
+        node *temp = parent->right;
+        parent->right = Node;
+        Node->left = temp;
+        Node->height = std::max(getHeight(Node->left), getHeight(Node->right)) + 1;
+        parent->height = std::max(getHeight(parent->left), getHeight(parent->right)) + 1;
+        return parent;
+    }
+
+    node *rotLeft(node *Node) {
+        //std::cout << "rotLeft on " << Node->value << std::endl;
+        node *parent = Node->right;
+        node *temp = parent->left;
+        parent->left = Node;
+        Node->right = temp;
+        Node->height = std::max(getHeight(Node->left), getHeight(Node->right)) + 1;
+        parent->height = std::max(getHeight(parent->left), getHeight(parent->right)) + 1;
+        return parent;
+    }
+
+
+
+    node *insert(node *root, int _value) {
+        //std::cout << "insert " << _value << std::endl;
+        if (root == nullptr) {
+            return createNode(_value);
+        }
+
+        // Inseram frumos noua valoare
+
+        if (_value < root->value) {
+            root->left = insert(root->left, _value);
+        }else{
+            root->right = insert(root->right, _value);
+        }
+
+        //std::cout << "cnt for " << root->value << std::endl;
+
+        root->height = std::max(getHeight(root->left), getHeight(root->right)) + 1;
+        int balanceMe = getBalance(root);
+        int balanceLeft = getBalance(root->left);
+        int balanceRight = getBalance(root->right);
+        //std::cout << "balance(" << root->value << ") " << balanceMe << " l:" << balanceLeft << " r:" << balanceRight << std::endl;
+        //LL
+        if (balanceMe <= -2 && balanceLeft < 0) {
+            //std::cout << "LL on " << root->value << " " << balanceMe <<  " " << balanceRight << std::endl;
+            return rotRight(root);
+        }
+
+        //LR
+        if (balanceMe <= -2 && balanceLeft > 0) {
+            //std::cout << "LR on " << root->value << " " << balanceMe <<  " " << balanceRight << std::endl;
+            root->left = rotLeft(root->left); // observati cum rotim frumos la dreapta aripa stanga
+            return rotRight(root);  // apoi elegant totu la stanga
+        }
+
+        //RL
+        if (balanceMe >= 2 && balanceRight <= 0) {
+            //std::cout << "RL on " << root->value << " " << balanceMe <<  " " << balanceRight << std::endl;
+            root->right = rotRight(root->right);
+            return rotLeft(root);
+        }
+
+        //RR
+        if (balanceMe >= 2 && balanceRight >= 0) {
+            //std::cout << "RR on " << root->value << " " << balanceMe <<  " " << balanceRight << std::endl;
+            return rotLeft(root);
+        }
+
+        return root;
+
+    }
+
+    void sortTree(node *root, std::vector<int> &finArray) {
+        if (root == nullptr) {
+            return;
+        }
+        sortTree(root->left, finArray);
+        finArray.push_back(root->value);
+        sortTree(root->right, finArray);
+    }
+
+public:
+    void sort(const int left, const int n) {
+        node *Node = nullptr;
+        for (int i = 0; i < n; ++i) {
+            Node = insert(Node, array[i]);
+        }
+
+        array.clear();
+
+        sortTree(Node, array);
+    }
+
+
+
+
+};
+
 template<typename Sortname>
 class Test {
     std::vector<int> template_array = {9, 8, 7, 6, 5, 4, 3, 2, 1};
@@ -273,8 +411,11 @@ int main() {
     Test<Shellsort> shellsort;
     Test<Radixsort> radixsort;
     Test<Heapsort> heapsort;
+    Test<AVLSort> avlsort;
+
     mergesort.run();
     shellsort.run();
+    avlsort.run();
     radixsort.run();
     heapsort.run();
     return 0;
