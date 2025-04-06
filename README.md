@@ -1,3 +1,4 @@
+
 # Algoritmi de sortare - Structuri de Date
 
 ## **Temă de laborator**
@@ -100,12 +101,33 @@ Mai multe specificații:
 - ### Radix Sort
 
 - ### Heap Sort
+-   Descriere  
+    HeapSort este un algoritm de sortare bazat pe structura de date heap, un arbore binar complet în care fiecare nod părinte este mai mare (sau mai mic, în funcție de tipul heap-ului) decât copiii săi. Algoritmul construiește un heap din lista de elemente, apoi extrage în mod repetat elementul maxim (sau minim) și îl plasează în poziția sa corectă. Procesul de extragere a elementului maxim/minim și refacerea heap-ului se repetă până când lista este sortată.
+    
+-   Complexitate
+    
+    -   Timp: O(n log n)
+        
+    -   Spațiu: O(1)
 
 - ### Tim Sort
+-   Descriere  
+    Timsort este un algoritm de sortare hibrid, care combină tehnici din algoritmi precum MergeSort și InsertionSort. Este utilizat de limbaje de programare precum Python și Java pentru sortarea implicită. Algoritmul împarte lista în subsecvențe mici, denumite "run-uri", care sunt sortate folosind InsertionSort, iar apoi aceste run-uri sunt combinate folosind MergeSort. Timsort este optimizat pentru liste care au secvențe deja parțial sortate, fiind foarte eficient în cazul datelor reale.
+    
+-   Complexitate
+    
+    -   Timp: O(n log n) în cel mai rău caz, O(n) în cel mai bun caz
+        
+    -   Spațiu: O(n)
 
 - ### AVL Sort
-
+  - Descriere 
+AVL sort este un algoritm de sortare bazat pe arbori binari de cautare, in care se pastreaza balanta intre ramuri prin operatii complexe de permutari ale nodurilor numite "Rotiri", fie la stanga fie la dreapta. Astfel arborele ce rezulta va fi echilibrat indiferent de inputul dat.
+  - Complexitate
+	   - Timp: O(nlogn) + O(n)
+	   - Spatiu: O(n) 
 - ### Default Sort (STL)
+	
 
 ## 4. Concluzii
 
