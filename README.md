@@ -1,7 +1,5 @@
 # Algoritmi de sortare - Structuri de Date
 
-<hr>
-
 ## **Temă de laborator**
 - Universitatea din București
 - Facultatea de Matematică și Informatică
@@ -9,7 +7,6 @@
 - Structuri de Date ~ Semestrul II
 - Acest proiect a fost realizat de [Minciunescu Vlad - 151](https://github.com/vlaxcs/), [Ghiță Radu-Ioachim - 152](https://github.com/KoNickss), [Pascariu Carlo-Alexandru - 152](https://github.com/alexandrucarlo)
 
-<hr>
 
 ## 1. Teste utilizate
 
@@ -34,8 +31,6 @@
   - Numere din [-10^4, 10^4], întregi pe float, distribuite aleatoriu.
   - Numere din [-10^4, 10^4], reale pe float, distribuite aleatoriu.
 
-<hr>
-
 ## 2. Algoritmi de sortare analizați
 
 - ### Merge Sort
@@ -51,8 +46,6 @@
 - ### AVL Sort
 
 - ### Default Sort (STL)
-
-<hr>
 
 ## 3. Concluzii
 
