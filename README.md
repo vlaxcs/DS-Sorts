@@ -12,31 +12,31 @@
 Testele au fost generate automat, folosind [acest program Python](./cmake-build-debug/Generator/gen.py).
 
 - #### Tipul de date INT
-  - [x] Secvență de 1.000 de 1 și 0.
-  - [x] Secvență de 4.000.000 de 1 și 0, pe poziții aleatorii.
+  - [x] 1. Secvență de 1.000 de 1 și 0.
+  - [x] 2. Secvență de 4.000.000 de 1 și 0, pe poziții aleatorii.
   - [ ] Secvență de 4.000.000 de 1 și 0, pe poziții aleatorii distribuite 'Gauss'.
-  - [x] Secvență de 4.000.000 de 1 și 0, ordonate în sens crescător.
-  - [x] Secvență de 4.000.000 de 1 și 0, ordonate în sens descrescător.
-  - [x] 1.000 de numere din [0, 10^5], naturale pe int, distribuite aleatoriu.
-  - [x] 1.000 de numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite aleatoriu.
-  - [x] 1.000.000 de numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite aleatoriu.
-  - [x] 4.000.000 de numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite aleatoriu.
+  - [x] 3. Secvență de 4.000.000 de 1 și 0, ordonate în sens crescător.
+  - [x] 4. Secvență de 4.000.000 de 1 și 0, ordonate în sens descrescător.
+  - [x] 5. 1.000 de numere din [0, 10^5], naturale pe int, distribuite aleatoriu.
+  - [x] 6. 1.000 de numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite aleatoriu.
+  - [x] 7. 1.000.000 de numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite aleatoriu.
+  - [x] 8. 4.000.000 de numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite aleatoriu.
   - [ ] Numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite în prima jumătate de la [0, 10^4], apoi [10^4, 10^9].
   - [ ] Numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite în prima jumătate de la [0, 10^4], apoi [10^4, 10^9].
 
 - #### Tipul de date ULL (Unsigned Long Long)
   - Toate cele de mai sus.
-  - [x] 1.000 de numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
-  - [x] 100.000 de numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
-  - [x] 1.000.000 de numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
-  - [x] 4.000.000 de numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
+  - [x] 9. 1.000 de numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
+  - [x] 10. 100.000 de numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
+  - [x] 11. 1.000.000 de numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
+  - [x] 12. 4.000.000 de numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
 
 - #### Tipul de date FLOAT
   - Toate cele de mai sus.
-  - [x] 1.000 de numere din [-10^3, 10^3], reale pe float din float.h.
-  - [x] 100.000 de numere din din [-10^3, 10^3], reale pe float din float.h.
-  - [x] 500.000 de numere din [-10^6, 10^6], reale pe float, distribuite aleatoriu.
-  - [x] 4.000.000 de numere din [1, 10^43 ~ 3.40282e+38 / FLT_MAX], reale pe float, distribuite aleatoriu.
+  - [x] 13. 1.000 de numere din [-10^3, 10^3], reale pe float din float.h.
+  - [x] 14. 100.000 de numere din din [-10^3, 10^3], reale pe float din float.h.
+  - [x] 15. 500.000 de numere din [-10^6, 10^6], reale pe float, distribuite aleatoriu.
+  - [x] 16. 4.000.000 de numere din [1, 10^43 ~ 3.40282e+38 / FLT_MAX], reale pe float, distribuite aleatoriu.
 
 ```
 test = [
