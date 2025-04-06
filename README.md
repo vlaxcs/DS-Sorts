@@ -36,7 +36,11 @@
 
 <hr>
 
-## 2. Algoritmi de sortare analizați
+## 2. Configurație de testare
+
+CPU: AMD Ryzen 7 2700
+
+## 3. Algoritmi de sortare analizați
 
 - ### Merge Sort
 
@@ -54,7 +58,7 @@
 
 <hr>
 
-## 3. Concluzii
+## 4. Concluzii
 
 Link la sheet în google docs !!!!!!!!!
 
@@ -66,3 +70,8 @@ Link la sheet în google docs !!!!!!!!!
 [^2]: [Heapsort - Programiz](https://www.programiz.com/dsa/heap-sort)
 [^3]: [AVL Sort - MCGILL CS](https://www.cs.mcgill.ca/~jeromew/COMP251material/COMP251_Lecture4_W2017.pdf)
 [^4]: [AVL Sort - MIT](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/83cdd705cd418d10d9769b741e34a2b8_MIT6_006F11_lec06.pdf)
+
+
+Scoruri
+Scor per Test (% din MAX pe acel TEST)
+Scor general = (Scor per Test) / Nr. Teste
