@@ -1,7 +1,5 @@
 # Algoritmi de sortare - Structuri de Date
 
-<hr>
-
 ## **Temă de laborator**
 - Universitatea din București
 - Facultatea de Matematică și Informatică
@@ -9,17 +7,15 @@
 - Structuri de Date ~ Semestrul II
 - Acest proiect a fost realizat de [Minciunescu Vlad - 151](https://github.com/vlaxcs/), [Ghiță Radu-Ioachim - 152](https://github.com/KoNickss), [Pascariu Carlo-Alexandru - 152](https://github.com/alexandrucarlo)
 
-<hr>
 
 ## 1. Teste utilizate
 
-- #### Tipul de date BOOL
+- #### Tipul de date INT
+  - Secvență de 1000 de 1 și 0.
+  - Secvență de 4.000.000 de 1 și 0, pe poziții aleatorii.
   - Secvență de 4.000.000 de 1 și 0, pe poziții aleatorii distribuite 'Gauss'. 
   - Secvență de 4.000.000 de 1 și 0, ordonate în sens crescător.
   - Secvență de 4.000.000 de 1 și 0, ordonate în sens descrescător.
-
-- #### Tipul de date INT
-  - Toate cele de mai sus.
   - Numere din [1, 10^9], naturale pe int, distribuite aleatoriu.
   - Numere din [1, 10^10 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite în prima jumătate de la [1, 10^4], apoi [10^4, 10^9].
   - Numere din [1, 10^11 ~ 4,294,967,295 / UINT_MAX], naturale pe unsigned int, distribuite în prima jumătate de la [1, 10^4], apoi [10^4, 10^9].
