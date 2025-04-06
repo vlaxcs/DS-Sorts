@@ -109,15 +109,13 @@ Mai multe specificații:
 
 ## 4. Concluzii
 
-Rezultatele rulării programului se găsesc [aici](./cmake-build-debug/Results/stats.csv) și sunt generate după fiecare rulare, după ce fiecare algoritm trece toate testele care îi sunt impuse. Pentru fiecare test greșit, în zona respectivă din tabel va apărea valoarea 0.
+Rezultatele rulării programului se găsesc [aici](./cmake-build-debug/Results/stats.csv) și sunt generate după fiecare rulare, după ce fiecare algoritm trece toate testele care îi sunt impuse. Pentru fiecare test eșuat, în zona respectivă din tabel va apărea valoarea 0.
 
 Cu ajutorul acestor rezultate, am putut analiza în ce situații se comportă cel mai bine fiecare algoritm în parte, situații în care dă rateuri semnificative și diferențe între cum rulează fiecare, în funcție de tipul de date pe care operează.
 
 Pentru analiză individuală, puteți prelua acest header în format CSV:
 
-<code>
 Nume sortare,Test 1,Test 2,Test 3,Test 4,Test 5,Test 6,Test 7,Test 8,Test 9,Test 10,Test 11,Test 12,Test 13,Test 14,Test 15,Test 16
-</code>
 
 [Analiză pe datele obținute](https://docs.google.com/spreadsheets/d/1XdGlZTay1lB6k2WAH3y66sNtS-324AQD3hbpKgi33Xw/edit?usp=sharing)
 
