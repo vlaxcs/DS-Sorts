@@ -11,6 +11,8 @@
 ## 1. Teste utilizate
 
 - #### Tipul de date BOOL
+  - Secvență de 1000 de 1 și 0.
+  - Secvență de 4.000.000 de 1 și 0, pe poziții aleatorii.
   - Secvență de 4.000.000 de 1 și 0, pe poziții aleatorii distribuite 'Gauss'. 
   - Secvență de 4.000.000 de 1 și 0, ordonate în sens crescător.
   - Secvență de 4.000.000 de 1 și 0, ordonate în sens descrescător.
