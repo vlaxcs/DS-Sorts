@@ -11,24 +11,55 @@
 ## 1. Teste utilizate
 
 - #### Tipul de date INT
-  - Secvență de 1000 de 1 și 0.
+  - Secvență de 1.000 de 1 și 0.
   - Secvență de 4.000.000 de 1 și 0, pe poziții aleatorii.
-  - Secvență de 4.000.000 de 1 și 0, pe poziții aleatorii distribuite 'Gauss'. 
+  // - Secvență de 4.000.000 de 1 și 0, pe poziții aleatorii distribuite 'Gauss'. 
   - Secvență de 4.000.000 de 1 și 0, ordonate în sens crescător.
   - Secvență de 4.000.000 de 1 și 0, ordonate în sens descrescător.
-  - Numere din [1, 10^9], naturale pe int, distribuite aleatoriu.
-  - Numere din [1, 10^10 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite în prima jumătate de la [1, 10^4], apoi [10^4, 10^9].
-  - Numere din [1, 10^11 ~ 4,294,967,295 / UINT_MAX], naturale pe unsigned int, distribuite în prima jumătate de la [1, 10^4], apoi [10^4, 10^9].
+  - 1.000 de numere din [0, 10^5], naturale pe int, distribuite aleatoriu.
+  - 1.000 de numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite aleatoriu.
+  - 1.000.000 de numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite aleatoriu.
+  - 4.000.000 de numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite aleatoriu.
+  // - Numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite în prima jumătate de la [0, 10^4], apoi [10^4, 10^9].
+  // - Numere din [0, 10^9 ~ 2,147,483,647 / INT_MAX], naturale pe int, distribuite în prima jumătate de la [0, 10^4], apoi [10^4, 10^9].
 
 - #### Tipul de date ULL (Unsigned Long Long)
   - Toate cele de mai sus.
-  - Numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
-
+  - 1.000 de numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
+  - 100.000 de numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
+  - 1.000.000 de numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
+  - 4.000.000 de numere din [1, 10^19 ~ 18,446,744,073,709,551,615 / ULLONG_MAX], naturale pe unsigned long long.
+   
 - #### Tipul de date FLOAT
   - Toate cele de mai sus.
-  - Numere din [1, 10^43 ~ 3.40282e+38 / FLT_MAX], reale pe float din float.h.
-  - Numere din [-10^4, 10^4], întregi pe float, distribuite aleatoriu.
-  - Numere din [-10^4, 10^4], reale pe float, distribuite aleatoriu.
+  - 1.000 de numere din [-10^3, 10^3], reale pe float din float.h.
+  - 100.000 de numere din din [-10^3, 10^3], reale pe float din float.h.
+  - 500.000 de numere din [-10^6, 10^6], reale pe float, distribuite aleatoriu.
+  - 4.000.000 de numere din [1, 10^43 ~ 3.40282e+38 / FLT_MAX], reale pe float, distribuite aleatoriu.
+
+```
+test = [
+    # INT
+    {"count": 1_000, "lower": 0, "upper": 1},
+    {"count": 4_000_000, "lower": 0, "upper": 1},
+    {"count": 4_000_000, "lower": 0, "upper": 1, "order": "asc"},
+    {"count": 4_000_000, "lower": 0, "upper": 1, "order": "desc"},
+    {"count": 1_000, "lower": 0, "upper": 10_000},
+    {"count": 1_000, "lower": 0, "upper": 2_147_483_647},
+    {"count": 1_000_000, "lower": 0, "upper": 2_147_483_647},
+    {"count": 4_000_000, "lower": 0, "upper": 2_147_483_647},
+    # ULL
+    {"count": 1_000, "lower": 0, "upper": 18_446_744_073_709_551_615},
+    {"count": 100_000, "lower": 0, "upper": 18_446_744_073_709_551_615},
+    {"count": 1_000_000, "lower": 0, "upper": 18_446_744_073_709_551_615},
+    {"count": 4_000_000, "lower": 0, "upper": 18_446_744_073_709_551_615},
+    # FLOAT
+    {"count": 1_000, "lower": -1_000, "upper": 1_000},
+    {"count": 100_000, "lower": -1_000, "upper": 1_000},
+    {"count": 500_000, "lower": -100_000, "upper": 100_000},
+    {"count": 4_000_000, "lower": 0, "upper": 340_282_000_000_000_000_000_000_000_000_000_000}
+]
+```
 
 <hr>
 
