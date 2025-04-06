@@ -95,38 +95,52 @@ Mai multe specificații:
 ## 3. Algoritmi de sortare analizați
 
 - ### Merge Sort
+ - Descriere
+Merge Sort este un algoritm bazat pe principiul "Divide et Impera", în care lista este împărțită recursiv în două subliste până la o listă de dimensiunea 1 (care este sortată), iar sortarea se face interclasând fiecare listă, până se obține lista finală. Este un algoritm stabil.
+  - Complexitate
+    - Timp: O(n log n) best, average, worst
+    - Spațiu: O(n) (pentru vectorul de interclasare)
 
 - ### Shell Sort
-
+  - Descriere
+Shell Sort este un algoritm bazat pe Insertion Sort, sortând mai întâi elementele aflate cu k spații între ele, unde k scade până la 1 (Insertion Sort). Această metodă de sortare permite elementelor dezordonate să parcurgă distanțe mai lungi până la poziția corectă, și scade numărul de schimbări necesare pentru fiecare pas, cu dezavantajul că algoritmul își pierde stabilitatea. În implementare, a fost folosită secvența lui Tokuda (k~n~ = k~n-1~ * 2.25, k~1~ = 1).
+  - Complexitate
+    - Timp: average depinde de secvența de spații-uri, best O(n log n), worst O(n^2^)
+    - Spațiu: O(1) (fiind bazat pe Insertion, sortarea se face in-place)
 - ### Radix Sort
+  - Descriere
+Radix Sort este un algoritm non-comparativ, care aplică Counting Sort pentru fiecare cifră, până la ultima cifră, și se poate realiza începând cu cea mai semnificativă cifră (MSD) sau cu cea mai puțin semnificativă (LSD). În implementare, a fost folosită metoda LSD, fiind stabilă și ușor de realizat.
+  - Complexitate
+    - Timp: O(d*(n+b)), unde d este numărul maxim de cifre al numerelor, iar b este baza
+    - Spațiu: O(n + b)
 
 - ### Heap Sort
--   Descriere  
+  - Descriere
     HeapSort este un algoritm de sortare bazat pe structura de date heap, un arbore binar complet în care fiecare nod părinte este mai mare (sau mai mic, în funcție de tipul heap-ului) decât copiii săi. Algoritmul construiește un heap din lista de elemente, apoi extrage în mod repetat elementul maxim (sau minim) și îl plasează în poziția sa corectă. Procesul de extragere a elementului maxim/minim și refacerea heap-ului se repetă până când lista este sortată.
     
--   Complexitate
-    
-    -   Timp: O(n log n)
-        
-    -   Spațiu: O(1)
+  - Complexitate
+    - Timp: O(n log n)  
+    - Spațiu: O(1)
 
 - ### Tim Sort
--   Descriere  
+  - Descriere  
     Timsort este un algoritm de sortare hibrid, care combină tehnici din algoritmi precum MergeSort și InsertionSort. Este utilizat de limbaje de programare precum Python și Java pentru sortarea implicită. Algoritmul împarte lista în subsecvențe mici, denumite "run-uri", care sunt sortate folosind InsertionSort, iar apoi aceste run-uri sunt combinate folosind MergeSort. Timsort este optimizat pentru liste care au secvențe deja parțial sortate, fiind foarte eficient în cazul datelor reale.
-    
--   Complexitate
-    
-    -   Timp: O(n log n) în cel mai rău caz, O(n) în cel mai bun caz
-        
-    -   Spațiu: O(n)
+  - Complexitate  
+    - Timp: O(n log n) în cel mai rău caz, O(n) în cel mai bun caz  
+    - Spațiu: O(n)
 
 - ### AVL Sort
-  - Descriere 
+  - Descriere
 AVL sort este un algoritm de sortare bazat pe arbori binari de cautare, in care se pastreaza balanta intre ramuri prin operatii complexe de permutari ale nodurilor numite "Rotiri", fie la stanga fie la dreapta. Astfel arborele ce rezulta va fi echilibrat indiferent de inputul dat.
   - Complexitate
 	   - Timp: O(nlogn) + O(n)
 	   - Spatiu: O(n) 
 - ### Default Sort (STL)
+  - Descriere
+Funcția sort() este o funcție generică, cu implementare specifică nedefinită în standardul limbajului C++, singura precizare fiind ca un worst-case scenario să nu fie mai rău decât O(n log n). Compilatorul GCC folosește o combinație dintre Introsort (hibrid între Quick Sort și Heap Sort) și Insertion Sort. 
+  - Complexitate
+    - Timp: nu mai mare de O(n log n)
+
 	
 
 ## 4. Concluzii
