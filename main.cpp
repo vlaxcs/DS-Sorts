@@ -123,8 +123,8 @@ class Radixsort : public Algorithm<data_type> {
 private:
     const int base = 10;
 
-    int maxim(const auto& v, const int n) {
-        int max = v[0];
+    data_type maxim(const auto& v, const int n) {
+        data_type max = v[0];
         for (int i = 1; i < n; ++i) {
             if (v[i] > max) {
                 max = v[i];
@@ -138,7 +138,7 @@ public:
 
     // LSD radix sort
     void sort(const int left, const int n, const int order = 0) {
-        const int max = maxim(this->array, n);
+        const data_type max = maxim(this->array, n);
         for (int exp = 1; max / exp > 0; exp *= base) {
             std::vector<int> freq(base, 0), out(n);
 
@@ -267,16 +267,15 @@ public:
     }
 };
 
-class node {
-public:
-    int value;
-    int height;
-    node *left;
-    node *right;
-};
-
 template<typename data_type>
 class AVL : public Algorithm<data_type> {
+    class node {
+    public:
+        data_type value;
+        int height;
+        node *left;
+        node *right;
+    };
 private:
 
     node *createNode(data_type _value) {
@@ -456,7 +455,7 @@ class Test {
             throw std::runtime_error("File does not exist: " + file_name);
         }
 
-        int input;
+        data_type input;
         while (f >> input) {
             temp_array.push_back(input);
         }
@@ -565,9 +564,14 @@ public:
 
                     std::cout << std::format("[{}] Sorting time using {}: ", order == 0 ? "ASC" : "DESC", sort_name) << current_runtime << ' ';
 
-                    algorithm.addLastRuntime(current_runtime);
                     const std::string status = Test::checkResult(algorithm, order) ? "OK" : "FAIL";
                     std::cout << status << std::endl;
+                    if (status == "OK") {
+                        algorithm.addLastRuntime(current_runtime);
+                    } else {
+                        const std::chrono::duration<double, std::milli> no_value{0.0};
+                        algorithm.addLastRuntime(no_value);
+                    }
 
                     Test::setResult(current_results_path, sort_name, file_name, order == 0 ? "ASC" : "DESC", algorithm);
                 }
@@ -592,8 +596,8 @@ int main() {
     Test<Shellsort<float>, float> shellsort_float; shellsort_float.run();
 
     // Radixsort
-    // Test<Radixsort<int>, int> radixsort_int; radixsort_int.run();
-    // Test<Radixsort<unsigned long long>, unsigned long long> radixsort_ull; radixsort_ull.run();
+    Test<Radixsort<int>, int> radixsort_int; radixsort_int.run();
+    Test<Radixsort<unsigned long long>, unsigned long long> radixsort_ull; radixsort_ull.run();
     // Not working on float // Test<Radixsort<float>, float> radixsort_float; radixsort_float.run();
 
     // Heapsort
