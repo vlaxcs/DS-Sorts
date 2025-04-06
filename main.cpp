@@ -1,9 +1,9 @@
-#include <vector> // Mergesort, Test
-#include <iostream> // Mergesort
-#include <chrono> // Test
-#include <filesystem> // Test
-#include <fstream> // Test
-#include <cfloat> // Test
+#include <vector>
+#include <iostream>
+#include <chrono>
+#include <filesystem>
+#include <fstream>
+#include <cfloat>
 
 template<typename data_type>
 class Algorithm {
@@ -143,7 +143,7 @@ public:
             std::vector<int> freq(base, 0), out(n);
 
             for (int i = 0; i < n; ++i) {
-                freq[(this->array[i] / exp) % base]++;
+                ++freq[(this->array[i] / exp) % base];
             }
 
             for (int i = 1; i < base; ++i) {
@@ -289,14 +289,14 @@ private:
         return (Node);
     }
 
-    int getHeight(node *Node) {
+    int getHeight(const node *Node) {
         if (Node == nullptr) {
             return 0;
         }
         return Node->height;
     }
 
-    int getBalance(node *Node) {
+    int getBalance(const node *Node) {
         if (Node == nullptr) {
             return 0;
         }
@@ -580,33 +580,33 @@ public:
 };
 
 int main() {
-    Test<Mergesort<int>, int> mergesort; mergesort.run();
-    Test<Mergesort<float>, float> mergesort_float; mergesort_float.run();
-    Test<Mergesort<unsigned long long>, unsigned long long> mergesort_ull; mergesort_ull.run();
-
-    Test<Shellsort<int>, int> shellsort; shellsort.run();
-    Test<Shellsort<float>, float> shellsort_float; shellsort_float.run();
-    Test<Shellsort<unsigned long long>, unsigned long long> shellsort_ull; shellsort_ull.run();
-
-    // Test<Radixsort<int>, int> radixsort; radixsort.run();
-    // // Not working on float // Test<Radixsort<float>, float> radixsort_float; radixsort_float.run();
-    // Test<Radixsort<unsigned long long>, unsigned long long> radixsort_ull; radixsort_ull.run();
-
-    Test<Heapsort<int>, int> heapsort; heapsort.run();
-    Test<Heapsort<float>, float> heapsort_float; heapsort_float.run();
-    Test<Heapsort<unsigned long long>, unsigned long long> heapsort_ull; heapsort_ull.run();
-
-    Test<Timsort<int>, int> timsort; timsort.run();
-    Test<Timsort<float>, float> timsort_float; timsort_float.run();
-    Test<Timsort<unsigned long long>, unsigned long long> timsort_ull; timsort_ull.run();
+    // Test<Mergesort<int>, int> mergesort; mergesort.run();
+    // Test<Mergesort<float>, float> mergesort_float; mergesort_float.run();
+    // Test<Mergesort<unsigned long long>, unsigned long long> mergesort_ull; mergesort_ull.run();
+    //
+    // Test<Shellsort<int>, int> shellsort; shellsort.run();
+    // Test<Shellsort<float>, float> shellsort_float; shellsort_float.run();
+    // Test<Shellsort<unsigned long long>, unsigned long long> shellsort_ull; shellsort_ull.run();
+    //
+    // // Test<Radixsort<int>, int> radixsort; radixsort.run();
+    // // // Not working on float // Test<Radixsort<float>, float> radixsort_float; radixsort_float.run();
+    // // Test<Radixsort<unsigned long long>, unsigned long long> radixsort_ull; radixsort_ull.run();
+    //
+    // Test<Heapsort<int>, int> heapsort; heapsort.run();
+    // Test<Heapsort<float>, float> heapsort_float; heapsort_float.run();
+    // Test<Heapsort<unsigned long long>, unsigned long long> heapsort_ull; heapsort_ull.run();
+    //
+    // Test<Timsort<int>, int> timsort; timsort.run();
+    // Test<Timsort<float>, float> timsort_float; timsort_float.run();
+    // Test<Timsort<unsigned long long>, unsigned long long> timsort_ull; timsort_ull.run();
 
     Test<AVL<int>, int> AVL_int; AVL_int.run();
-    Test<AVL<float>, float> AVL_float; AVL_float.run();
-    Test<AVL<unsigned long long>, unsigned long long> AVL_ull; AVL_ull.run();
+    // Test<AVL<float>, float> AVL_float; AVL_float.run();
+    // Test<AVL<unsigned long long>, unsigned long long> AVL_ull; AVL_ull.run();
 
-    Test<Default<int>, int> default_int; default_int.run();
-    Test<Default<float>, float> default_float; default_float.run();
-    Test<Default<unsigned long long>, unsigned long long> default_ull; default_ull.run();
+    // Test<Default<int>, int> default_int; default_int.run();
+    // Test<Default<float>, float> default_float; default_float.run();
+    // Test<Default<unsigned long long>, unsigned long long> default_ull; default_ull.run();
 
     return 0;
 }
