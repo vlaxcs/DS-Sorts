@@ -165,8 +165,9 @@ Cu ajutorul acestor rezultate, am putut analiza în ce situații se comportă ce
 
 Pentru analiză individuală, puteți prelua acest header în format CSV:
 
+```
 Nume sortare,Test 1,Test 2,Test 3,Test 4,Test 5,Test 6,Test 7,Test 8,Test 9,Test 10,Test 11,Test 12,Test 13,Test 14,Test 15,Test 16
-
+```
 [Analiză pe datele obținute](https://docs.google.com/spreadsheets/d/1XdGlZTay1lB6k2WAH3y66sNtS-324AQD3hbpKgi33Xw/edit?usp=sharing)
 
 ### Mențiuni
