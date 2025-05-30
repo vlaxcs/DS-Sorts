@@ -94,7 +94,7 @@ Mai multe specificații:
 
 ## 3. Algoritmi de sortare analizați
 
-- ### Merge Sort
+### Merge Sort
  - Descriere
 
 Merge Sort este un algoritm bazat pe principiul "Divide et Impera", în care lista este împărțită recursiv în două subliste până la o listă de dimensiunea 1 (care este sortată), iar sortarea se face interclasând fiecare listă, până se obține lista finală. Este un algoritm stabil.
@@ -103,7 +103,7 @@ Merge Sort este un algoritm bazat pe principiul "Divide et Impera", în care lis
     - Timp: O(n log n) best, average, worst
     - Spațiu: O(n) (pentru vectorul de interclasare)
 
-- ### Shell Sort
+### Shell Sort
  - Descriere
 
 Shell Sort este un algoritm bazat pe Insertion Sort, sortând mai întâi elementele aflate cu k spații între ele, unde k scade până la 1 (Insertion Sort). Această metodă de sortare permite elementelor dezordonate să parcurgă distanțe mai lungi până la poziția corectă, și scade numărul de schimbări necesare pentru fiecare pas, cu dezavantajul că algoritmul își pierde stabilitatea. În implementare, a fost folosită secvența lui Tokuda (k<sub>n</sub> = k<sub>n-</sub> * 2.25, k<sub>1</sub> = 1).
@@ -111,7 +111,8 @@ Shell Sort este un algoritm bazat pe Insertion Sort, sortând mai întâi elemen
  - Complexitate
     - Timp: average depinde de secvența de spații-uri, best O(n log n), worst O(n^2^)
     - Spațiu: O(1) (fiind bazat pe Insertion, sortarea se face in-place)
-- ### Radix Sort
+
+### Radix Sort
 
  - Descriere
 
@@ -121,7 +122,7 @@ Radix Sort este un algoritm non-comparativ, care aplică Counting Sort pentru fi
     - Timp: O(d*(n+b)), unde d este numărul maxim de cifre al numerelor, iar b este baza
     - Spațiu: O(n + b)
 
-- ### Heap Sort
+### Heap Sort
 
  - Descriere
 
@@ -131,7 +132,7 @@ HeapSort este un algoritm de sortare bazat pe structura de date heap, un arbore 
     - Timp: O(n log n)  
     - Spațiu: O(1)
 
-- ### Tim Sort
+### Tim Sort
  - Descriere  
 
 Timsort este un algoritm de sortare hibrid, care combină tehnici din algoritmi precum MergeSort și InsertionSort. Este utilizat de limbaje de programare precum Python și Java pentru sortarea implicită. Algoritmul împarte lista în subsecvențe mici, denumite "run-uri", care sunt sortate folosind InsertionSort, iar apoi aceste run-uri sunt combinate folosind MergeSort. Timsort este optimizat pentru liste care au secvențe deja parțial sortate, fiind foarte eficient în cazul datelor reale.
@@ -139,15 +140,15 @@ Timsort este un algoritm de sortare hibrid, care combină tehnici din algoritmi 
     - Timp: O(n log n) în cel mai rău caz, O(n) în cel mai bun caz  
     - Spațiu: O(n)
 
-- ### AVL Sort
+### AVL Sort
  - Descriere
 
 AVL sort este un algoritm de sortare bazat pe arbori binari de cautare, in care se pastreaza balanta intre ramuri prin operatii complexe de permutari ale nodurilor numite "Rotiri", fie la stanga fie la dreapta. Astfel arborele ce rezulta va fi echilibrat indiferent de inputul dat.
 
   - Complexitate
-	   - Timp: O(nlogn) + O(n)
+	   - Timp: O(n logn) + O(n)
 	   - Spatiu: O(n) 
-- ### Default Sort (STL)
+### Default Sort (STL)
  - Descriere
 
 Funcția sort() este o funcție generică, cu implementare specifică nedefinită în standardul limbajului C++, singura precizare fiind ca un worst-case scenario să nu fie mai rău decât O(n log n). Compilatorul GCC folosește o combinație dintre Introsort (hibrid între Quick Sort și Heap Sort) și Insertion Sort. 
@@ -156,7 +157,6 @@ Funcția sort() este o funcție generică, cu implementare specifică nedefinit�
     - Spațiu: depinde
 
 	
-
 ## 4. Concluzii
 
 Rezultatele rulării programului se găsesc [aici](./cmake-build-debug/Results/stats.csv) și sunt generate după fiecare rulare, după ce fiecare algoritm trece toate testele care îi sunt impuse. Pentru fiecare test eșuat, în zona respectivă din tabel va apărea valoarea 0.
@@ -174,7 +174,7 @@ Nume sortare,Test 1,Test 2,Test 3,Test 4,Test 5,Test 6,Test 7,Test 8,Test 9,Test
 - Nu am putut împărți proiectul în sources/headers, deoarece am avut nevoie de template pentru fiecare algoritm în parte (acesta a fost util pentru a le putea testa pentru mai multe tipuri de date).
 
 ### Bibliografie:
-[^1]: [Heapsort - Brilliant](https://brilliant.org/wiki/heap-sort/)
-[^2]: [Heapsort - Programiz](https://www.programiz.com/dsa/heap-sort)
-[^3]: [AVL Sort - MCGILL CS](https://www.cs.mcgill.ca/~jeromew/COMP251material/COMP251_Lecture4_W2017.pdf)
-[^4]: [AVL Sort - MIT](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/83cdd705cd418d10d9769b741e34a2b8_MIT6_006F11_lec06.pdf)
+- [Heapsort - Brilliant](https://brilliant.org/wiki/heap-sort/)
+- [Heapsort - Programiz](https://www.programiz.com/dsa/heap-sort)
+- [AVL Sort - MCGILL CS](https://www.cs.mcgill.ca/~jeromew/COMP251material/COMP251_Lecture4_W2017.pdf)
+- [AVL Sort - MIT](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/83cdd705cd418d10d9769b741e34a2b8_MIT6_006F11_lec06.pdf)
